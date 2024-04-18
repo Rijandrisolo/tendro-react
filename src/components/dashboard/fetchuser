@@ -1,0 +1,14 @@
+async function Handleclick() {
+  console.log("Handleclick");
+  try {
+    const response = await fetch("http://localhost:8000/findByEmail?");
+    if (!response.ok) {
+      throw new Error("Erreur lors de la récupération des données");
+    }
+    const userData = await response.json();
+    console.log(userData); // Utilise les données récupérées comme tu le souhaites
+  } catch (error) {
+    console.error("Une erreur s'est produite :", error);
+  }
+}
+Handleclick();
